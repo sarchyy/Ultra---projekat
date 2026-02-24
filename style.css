@@ -1,0 +1,159 @@
+body{
+    margin:0;
+    height:100vh;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    display:flex;
+    align-items:center;
+    justify-content:center;  
+    font-family: 'Segoe UI', sans-serif;
+    color:white;
+}
+
+.container{
+    display:flex;
+    align-items:center;
+    gap:120px;  
+}
+
+.lamp{
+    position:relative;
+}
+
+.shade{
+    width:220px;
+    height:140px;
+    background:linear-gradient(to bottom,#4f6f60,#2f3f38);
+    clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    transition:0.5s ease;
+    border-bottom:4px solid rgba(255,255,255,0.2);
+}
+
+.inner-glow{
+    position:absolute;
+    bottom:-2px;
+    width:180px;
+    height:20px;
+    background:radial-gradient(rgba(255,255,200,0.9),transparent 70%);
+    opacity:0;
+    transition:0.5s;
+}
+
+.face{
+    position:absolute;
+    top:45px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+}
+
+.eyes{
+    display:flex;
+    gap:35px;
+}
+
+.eye{
+    width:20px;
+    height:4px;
+    background:#111;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.mouth{
+    width:30px;
+    height:4px;
+    background:#111;
+    border-radius:10px;
+    transition:0.3s;
+}
+
+.stand{
+    width:10px;
+    height:160px;
+    background:linear-gradient(to bottom,#ddd,#aaa);
+    margin:0 auto;
+}
+
+.base{
+    width:140px;
+    height:18px;
+    background:linear-gradient(to right,#ccc,#999);
+    border-radius:50px;
+    margin:0 auto;
+}
+
+.light{
+    position:absolute;
+    top:130px;
+    left:50%;
+    transform:translateX(-50%);
+    width:320px;
+    height:280px;
+    background:radial-gradient(rgba(255,255,180,0.9),
+                               rgba(255,255,150,0.5),
+                               transparent 70%);
+    opacity:0;
+    transition:0.6s ease;
+    pointer-events:none;
+}
+
+.pull{
+    position:absolute;
+    top:120px;
+    left:25px;
+    width:2px;
+    height:80px;
+    background:white;
+    cursor:pointer;
+}
+
+.pull::after{
+    content:"";
+    position:absolute;
+    bottom:-10px;
+    left:-4px;
+    width:10px;
+    height:10px;
+    background:white;
+    border-radius:50%;
+}
+
+.text{
+    font-size:30px;
+    max-width:450px;
+    opacity:0;
+    transition:0.4s;
+}
+
+.on .light{
+    opacity:1;
+}
+
+.on .inner-glow{
+    opacity:1;
+}
+
+.on .shade{
+    background:linear-gradient(to bottom,#9fd8b9,#6fbf99);
+}
+
+.on .eye{
+    width:12px;
+    height:12px;
+    border-radius:50%;
+}
+
+.on .mouth{
+    width:40px;
+    height:15px;
+    border-radius:0 0 30px 30px;
+}
+
+.on ~ .text{
+    opacity:1;
+}
