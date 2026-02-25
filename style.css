@@ -1,4 +1,4 @@
-body{
+body{ 
     margin:0;
     height:100vh;
     background:linear-gradient(135deg,#0f172a,#1e293b);
@@ -12,16 +12,19 @@ body{
 .container{
     display:flex;
     align-items:center;
-    gap:120px;
+    gap:10vmin;       
     transform:scale(1.3);
+    transform-origin:center;
+    flex-wrap:wrap;  
 }
+
 .lamp{
     position:relative;
 }
 
 .shade{
-    width:220px;
-    height:140px;
+    width:25vmin;
+    height:15vmin;
     background:linear-gradient(to bottom,#4f6f60,#2f3f38);
     clip-path: polygon(15% 0%, 85% 0%, 100% 100%, 0% 100%);
     position:relative;
@@ -29,14 +32,14 @@ body{
     justify-content:center;
     align-items:center;
     transition:0.5s ease;
-    border-bottom:4px solid rgba(255,255,255,0.2);
+    border-bottom:0.4vmin solid rgba(255,255,255,0.2);
 }
 
 .inner-glow{
     position:absolute;
-    bottom:-2px;
-    width:180px;
-    height:20px;
+    bottom:-0.5vmin;
+    width:22vmin;
+    height:2vmin;
     background:radial-gradient(rgba(255,255,200,0.9),transparent 70%);
     opacity:0;
     transition:0.5s;
@@ -44,44 +47,44 @@ body{
 
 .face{
     position:absolute;
-    top:45px;
+    top:4vmin;
     display:flex;
     flex-direction:column;
     align-items:center;
-    gap:10px;
+    gap:1vmin;
 }
 
 .eyes{
     display:flex;
-    gap:35px;
+    gap:3vmin;
 }
 
 .eye{
-    width:20px;
-    height:4px;
+    width:2vmin;
+    height:0.5vmin;
     background:#111;
-    border-radius:10px;
+    border-radius:50%;
     transition:0.3s;
 }
 
 .mouth{
-    width:30px;
-    height:4px;
+    width:3vmin;
+    height:0.5vmin;
     background:#111;
-    border-radius:10px;
+    border-radius:50%;
     transition:0.3s;
 }
 
 .stand{
-    width:10px;
-    height:160px;
+    width:1vmin;
+    height:20vmin;
     background:linear-gradient(to bottom,#ddd,#aaa);
     margin:0 auto;
 }
 
 .base{
-    width:140px;
-    height:18px;
+    width:18vmin;
+    height:1.5vmin;
     background:linear-gradient(to right,#ccc,#999);
     border-radius:50px;
     margin:0 auto;
@@ -89,11 +92,11 @@ body{
 
 .light{
     position:absolute;
-    top:130px;
+    top:15vmin;
     left:50%;
     transform:translateX(-50%);
-    width:320px;
-    height:280px;
+    width:40vmin;
+    height:35vmin;
     background:radial-gradient(rgba(255,255,180,0.9),
                                rgba(255,255,150,0.5),
                                transparent 70%);
@@ -104,10 +107,10 @@ body{
 
 .pull{
     position:absolute;
-    top:120px;
-    left:25px;
-    width:2px;
-    height:80px;
+    top:13vmin;
+    left:2.5vmin;
+    width:0.2vmin;
+    height:10vmin;
     background:white;
     cursor:pointer;
 }
@@ -115,32 +118,32 @@ body{
 .pull::after{
     content:"";
     position:absolute;
-    bottom:-10px;
-    left:-4px;
-    width:10px;
-    height:10px;
+    bottom:-1vmin;
+    left:-0.4vmin;
+    width:1vmin;
+    height:1vmin;
     background:white;
     border-radius:50%;
 }
 
 .text{
-    font-size:22px;
-    max-width:450px;
+    font-size:2.2vmin;
+    max-width:35vmin;
     opacity:0;
-    transform:translateY(40px) scale(0.95);
+    transform:translateY(4vmin) scale(0.95);
     transition:0.5s ease;
     background:rgba(15,23,42,0.85);
-    padding:30px;
-    border-radius:15px;
-    border:2px solid transparent;
+    padding:2vmin;
+    border-radius:1.5vmin;
+    border:0.2vmin solid transparent;
     box-shadow:0 0 0 rgba(255,255,255,0);
     text-align:center;
 }
 
 .logo{
-    width:120px;
-    margin-bottom:20px;
-    filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
+    width:12vmin;
+    margin-bottom:1vmin;
+    filter: drop-shadow(0 0 1vmin rgba(255,255,255,0.5));
 }
 
 .on .light{
@@ -156,22 +159,22 @@ body{
 }
 
 .on .eye{
-    width:12px;
-    height:12px;
+    width:1.2vmin;
+    height:1.2vmin;
     border-radius:50%;
 }
 
 .on .mouth{
-    width:40px;
-    height:15px;
-    border-radius:0 0 30px 30px;
+    width:4vmin;
+    height:1.5vmin;
+    border-radius:0 0 3vmin 3vmin;
 }
 
 .on ~ .text{
     opacity:1;
     transform:translateY(0) scale(1);
-    border:2px solid #9fd8b9;
-    box-shadow:0 0 25px rgba(159,216,185,0.6);
+    border:0.2vmin solid #9fd8b9;
+    box-shadow:0 0 2.5vmin rgba(159,216,185,0.6);
 }
 
 .on ~ .text p{
@@ -185,7 +188,55 @@ body{
     }
     to{
         color:white;
-        text-shadow:0 0 10px #9fd8b9,
-                    0 0 20px #6fbf99;
+        text-shadow:0 0 1vmin #9fd8b9,
+                    0 0 2vmin #6fbf99;
+    }
+}
+
+@media (max-width: 768px){
+    .container{
+        flex-direction: column;
+        gap:5vmin;
+        transform:scale(1);
+    }
+
+    .text{
+        font-size:3vw;
+        max-width:80vw;
+        padding:3vw;
+    }
+
+    .logo{
+        width:25vw;
+    }
+
+    .shade{
+        width:50vw;
+        height:25vw;
+    }
+
+    .stand{
+        height:25vw;
+        width:2vw;
+    }
+
+    .light{
+        width:60vw;
+        height:50vw;
+        top:20vw;
+    }
+
+    .pull{
+        top:15vw;
+        left:3vw;
+        width:0.3vw;
+        height:12vw;
+    }
+
+    .pull::after{
+        width:1.5vw;
+        height:1.5vw;
+        bottom:-1.2vw;
+        left:-0.5vw;
     }
 }
